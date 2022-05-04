@@ -160,24 +160,19 @@ function winHor(x,y,Board)
 	let player = Board[x + y*size];
 	if (player == -1) return false;
 	
-	if (x > 0)
-	{
+	if (x > 0) {
 		let p = Board[x-1+y*size];
 		if (p != player && p != -1) counto++;
 	}
 	
-	for (i = x; i < size;i++)
-	{
+	for (i = x; i < size;i++) {
 		let p = Board[i+y*size];
-		if (p == player && p != -1)
-		{
+		if (p == player && p != -1) {
 			count++;
 			l_win.push(i+y*size);
-		}
-		else{ if (p != -1) counto++;break;};
+		} else{ if (p != -1) counto++;break;};
 	}
-	if (count >= countmax) 
-	{
+	if (count >= countmax) {
 		if (mode == 0)
 		return true;
 		else {
